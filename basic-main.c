@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ROW_SIZE 64
+#define ROW_SIZE 70
 #define ITERS 30
 // https://www.youtube.com/watch?v=z9y1SDjl0YQ&t=7061s
 
@@ -28,19 +28,11 @@ typedef enum {
 // pattern 	111 	110 	101 	100 	011 	010 	001 	000
 // NSFC 	0 	1 	1 	0 	1 	1 	1 	0
 // NewStateForCell
-
-// clang-format off
 Cell patterns[1 << 3] = {
-    [PATTERN(O, O, O)] = O,
-    [PATTERN(O, O, I)] = O,
-    [PATTERN(O, I, O)] = I,
-    [PATTERN(O, I, I)] = I,
-    [PATTERN(I, O, O)] = I,
-    [PATTERN(I, O, I)] = O,
-    [PATTERN(I, I, O)] = I,
-    [PATTERN(I, I, I)] = O,
+    [PATTERN(O, O, O)] = O, [PATTERN(O, O, I)] = I, [PATTERN(O, I, O)] = I,
+    [PATTERN(O, I, I)] = I, [PATTERN(I, O, O)] = O, [PATTERN(I, O, I)] = I,
+    [PATTERN(I, I, O)] = I, [PATTERN(I, I, I)] = O,
 };
-// clang-format on
 
 char cell_image[2] = {
     [O] = ' ',
