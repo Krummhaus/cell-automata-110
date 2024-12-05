@@ -5,6 +5,15 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
 
+// Somthing to read shader files from disc
+const char *slurp_file(const char *file_path) {
+    FILE *f = fopen(file_path, "r");
+    if (f == NULL) {
+        // END TODO: https://www.youtube.com/watch?v=z9y1SDjl0YQ&t=1688s 1:14:00
+    }
+    fclose(f);
+}
+
 int main() {
     if (glfwInit()) {
         fprintf(stderr, "ERROR: could not initialize GLFW");
